@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Container styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('close-up-stethoscope-blank-blue-background.jpg');
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .frame {
+            background-color: rgba(255, 255, 255, 0.3); /* To make the content more readable, you can add a semi-transparent white background */
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #023E8A;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Links styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        li a {
+            display: block;
+            padding: 12px 15px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px;
+            background-color: #023E8A;
+            color: white;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        li a:hover {
+            background-color: #0092b3c4;
+        }
+
+        /* Contact details styling */
+        .contact-details {
+            margin-top: 40px;
+            border-top: 2px solid #023E8A;
+            padding-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Hospital details styling */
+        .hospital-details {
+            margin-top: 40px;
+            border-top: 2px solid #023E8A;
+            padding-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="frame">
+    <h1>Welcome to our Hospital Management System</h1>
+
+    <ul>
+        <li><a href="/add-doctors">Add Doctor</a></li>
+        <li><a href="/add-patients">Add Patient</a></li>
+        <li><a href="/patientsdetails">Search Patient by ID</a></li>
+        <li><a href="/doctorsdetails">Search Doctor by ID</a></li>
+        <li><a href="/patientsdisease">Search Patients by Disease</a></li>
+    </ul>
+
+    <!-- Contact details section -->
+    <div class="contact-details">
+        <h2>Contact Details</h2>
+        <p>Phone: +1-123-456-7890</p>
+        <p>Email: info@examplehospital.com</p>
+        <p>Address: 123 Hospital St, City, Country</p>
+    </div>
+
+    <!-- Hospital details section -->
+    <div class="hospital-details">
+        <h2>Hospital Details</h2>
+        <p>Welcome to our Hospital Management System. We provide comprehensive healthcare services to our patients.</p>
+        <p>Our hospital is equipped with state-of-the-art facilities and staffed with highly skilled medical professionals.</p>
+        <p>For any inquiries or assistance, please feel free to contact us using the provided contact details.</p>
+    </div>
+</div>
+
+</body>
+</html>

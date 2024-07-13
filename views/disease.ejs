@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Patients by Disease</title>
+    <style>
+        /* Container styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            background-image: url('99.jpg');         
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Form styling */
+        .form-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: rgb(114, 183, 212, 0.7); 
+            padding: 30px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #023E8A;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        /* Input field styling */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #023E8A;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Submit button styling */
+        button {
+            background-color: #023E8A;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #2c88af;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Search Patients by Disease</h1>
+
+    <form action="/patients-disease" method="get">
+        <table>
+            <tr>
+                <td><label for="disease">Disease Name:</label></td>
+                <td><input type="text" id="disease" name="disease" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Search</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <% if (patients && patients.length > 0) { %>
+        <h2>Patients with <%= patients[0].disease %></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>id</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% patients.forEach(patient => { %>
+                    <tr>
+                        <td><%= patient.firstName %></td>
+                        <td><%= patient.lastName %></td>
+                        <td><%= patient.id %></td>
+                        <td><%= patient.dob.toDateString() %></td>
+                        <td><%= patient.gender %></td>
+                        <td><%= patient.email %></td>
+                        <td><%= patient.phone %></td>
+                        <td><%= patient.address %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else if (message) { %>
+        <p><%= message %></p>
+    <% } %>
+</div>
+
+</body>
+</html>

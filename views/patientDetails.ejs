@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Patient</title>
+    <style>
+        /* Container styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            background-image: url('44.jpg');         
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Form styling */
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color:  rgb(114, 183, 212,0.7);
+            padding: 30px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+        }
+
+        table tr {
+            margin-bottom: 15px;
+        }
+
+        table td {
+            padding: 10px;
+        }
+
+        /* Input field styling */
+       label {
+            display:block;
+            margin-bottom: 5px;
+            color: #023E8A;
+        }
+    
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea,
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Submit button styling */
+        button {
+            background-color: #023E8A;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #2c88af;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Search Patient</h1>
+
+    <form action="/search-patient" method="get">
+        <table>
+            <tr>
+                <td><label for="id">Patient ID:</label></td>
+                <td><input type="text" id="id" name="id" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Search</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
